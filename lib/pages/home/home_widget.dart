@@ -330,8 +330,7 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
                                                   Text(
-                                                    listViewEventdetailsRecord
-                                                        .numberOfPartipants,
+                                                    'Quantidade de Participantes ${listViewEventdetailsRecord.numberOfPartipants}',
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyLarge

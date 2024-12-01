@@ -15,40 +15,10 @@ class EventdetailsRecord extends FirestoreRecord {
     _initializeFields();
   }
 
-  // "name_of_participants" field.
-  String? _nameOfParticipants;
-  String get nameOfParticipants => _nameOfParticipants ?? '';
-  bool hasNameOfParticipants() => _nameOfParticipants != null;
-
   // "number_of_partipants" field.
   String? _numberOfPartipants;
   String get numberOfPartipants => _numberOfPartipants ?? '';
   bool hasNumberOfPartipants() => _numberOfPartipants != null;
-
-  // "evento1" field.
-  bool? _evento1;
-  bool get evento1 => _evento1 ?? false;
-  bool hasEvento1() => _evento1 != null;
-
-  // "evento2" field.
-  bool? _evento2;
-  bool get evento2 => _evento2 ?? false;
-  bool hasEvento2() => _evento2 != null;
-
-  // "evento3" field.
-  bool? _evento3;
-  bool get evento3 => _evento3 ?? false;
-  bool hasEvento3() => _evento3 != null;
-
-  // "evento4" field.
-  bool? _evento4;
-  bool get evento4 => _evento4 ?? false;
-  bool hasEvento4() => _evento4 != null;
-
-  // "evento5" field.
-  bool? _evento5;
-  bool get evento5 => _evento5 ?? false;
-  bool hasEvento5() => _evento5 != null;
 
   // "description_event" field.
   String? _descriptionEvent;
@@ -61,13 +31,7 @@ class EventdetailsRecord extends FirestoreRecord {
   bool hasName() => _name != null;
 
   void _initializeFields() {
-    _nameOfParticipants = snapshotData['name_of_participants'] as String?;
     _numberOfPartipants = snapshotData['number_of_partipants'] as String?;
-    _evento1 = snapshotData['evento1'] as bool?;
-    _evento2 = snapshotData['evento2'] as bool?;
-    _evento3 = snapshotData['evento3'] as bool?;
-    _evento4 = snapshotData['evento4'] as bool?;
-    _evento5 = snapshotData['evento5'] as bool?;
     _descriptionEvent = snapshotData['description_event'] as String?;
     _name = snapshotData['name'] as String?;
   }
@@ -107,25 +71,13 @@ class EventdetailsRecord extends FirestoreRecord {
 }
 
 Map<String, dynamic> createEventdetailsRecordData({
-  String? nameOfParticipants,
   String? numberOfPartipants,
-  bool? evento1,
-  bool? evento2,
-  bool? evento3,
-  bool? evento4,
-  bool? evento5,
   String? descriptionEvent,
   String? name,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
-      'name_of_participants': nameOfParticipants,
       'number_of_partipants': numberOfPartipants,
-      'evento1': evento1,
-      'evento2': evento2,
-      'evento3': evento3,
-      'evento4': evento4,
-      'evento5': evento5,
       'description_event': descriptionEvent,
       'name': name,
     }.withoutNulls,
@@ -140,29 +92,14 @@ class EventdetailsRecordDocumentEquality
 
   @override
   bool equals(EventdetailsRecord? e1, EventdetailsRecord? e2) {
-    return e1?.nameOfParticipants == e2?.nameOfParticipants &&
-        e1?.numberOfPartipants == e2?.numberOfPartipants &&
-        e1?.evento1 == e2?.evento1 &&
-        e1?.evento2 == e2?.evento2 &&
-        e1?.evento3 == e2?.evento3 &&
-        e1?.evento4 == e2?.evento4 &&
-        e1?.evento5 == e2?.evento5 &&
+    return e1?.numberOfPartipants == e2?.numberOfPartipants &&
         e1?.descriptionEvent == e2?.descriptionEvent &&
         e1?.name == e2?.name;
   }
 
   @override
-  int hash(EventdetailsRecord? e) => const ListEquality().hash([
-        e?.nameOfParticipants,
-        e?.numberOfPartipants,
-        e?.evento1,
-        e?.evento2,
-        e?.evento3,
-        e?.evento4,
-        e?.evento5,
-        e?.descriptionEvent,
-        e?.name
-      ]);
+  int hash(EventdetailsRecord? e) => const ListEquality()
+      .hash([e?.numberOfPartipants, e?.descriptionEvent, e?.name]);
 
   @override
   bool isValidKey(Object? o) => o is EventdetailsRecord;
