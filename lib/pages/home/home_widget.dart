@@ -252,8 +252,8 @@ class _HomeWidgetState extends State<HomeWidget> {
                                   letterSpacing: 0.0,
                                 ),
                           ),
-                          StreamBuilder<List<TypeeventsRecord>>(
-                            stream: queryTypeeventsRecord(),
+                          StreamBuilder<List<EventdetailsRecord>>(
+                            stream: queryEventdetailsRecord(),
                             builder: (context, snapshot) {
                               // Customize what your widget looks like when it's loading.
                               if (!snapshot.hasData) {
@@ -269,20 +269,22 @@ class _HomeWidgetState extends State<HomeWidget> {
                                   ),
                                 );
                               }
-                              List<TypeeventsRecord>
-                                  listViewTypeeventsRecordList = snapshot.data!;
+                              List<EventdetailsRecord>
+                                  listViewEventdetailsRecordList =
+                                  snapshot.data!;
 
                               return ListView.separated(
                                 padding: EdgeInsets.zero,
                                 primary: false,
                                 shrinkWrap: true,
                                 scrollDirection: Axis.vertical,
-                                itemCount: listViewTypeeventsRecordList.length,
+                                itemCount:
+                                    listViewEventdetailsRecordList.length,
                                 separatorBuilder: (_, __) =>
                                     const SizedBox(height: 5.0),
                                 itemBuilder: (context, listViewIndex) {
-                                  final listViewTypeeventsRecord =
-                                      listViewTypeeventsRecordList[
+                                  final listViewEventdetailsRecord =
+                                      listViewEventdetailsRecordList[
                                           listViewIndex];
                                   return Container(
                                     width: MediaQuery.sizeOf(context).width *
@@ -309,8 +311,27 @@ class _HomeWidgetState extends State<HomeWidget> {
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
                                                   Text(
-                                                    listViewTypeeventsRecord
-                                                        .nameEvent,
+                                                    listViewEventdetailsRecord
+                                                        .name,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyLarge
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          fontSize: 12.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w600,
+                                                        ),
+                                                  ),
+                                                ],
+                                              ),
+                                              Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: [
+                                                  Text(
+                                                    listViewEventdetailsRecord
+                                                        .numberOfPartipants,
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyLarge

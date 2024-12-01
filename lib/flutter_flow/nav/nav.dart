@@ -69,11 +69,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               collectionNamePath: ['eventdetails'],
             ),
           ),
-        ),
-        FFRoute(
-          name: 'EventosB',
-          path: '/eventosB',
-          builder: (context, params) => const EventosBWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

@@ -33,6 +33,8 @@ class _UpdateWidgetState extends State<UpdateWidget> {
 
     _model.textFieldFocusNode2 ??= FocusNode();
 
+    _model.textFieldFocusNode3 ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -117,16 +119,14 @@ class _UpdateWidgetState extends State<UpdateWidget> {
                             child: TextFormField(
                               controller: _model.textController1 ??=
                                   TextEditingController(
-                                text:
-                                    columnEventdetailsRecord.nameOfParticipants,
+                                text: columnEventdetailsRecord.name,
                               ),
                               focusNode: _model.textFieldFocusNode1,
                               autofocus: false,
                               obscureText: false,
                               decoration: InputDecoration(
                                 isDense: true,
-                                labelText:
-                                    columnEventdetailsRecord.nameOfParticipants,
+                                labelText: 'Nome do Evento',
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
@@ -195,341 +195,19 @@ class _UpdateWidgetState extends State<UpdateWidget> {
                         child: Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               16.0, 16.0, 16.0, 0.0),
-                          child: Material(
-                            color: Colors.transparent,
-                            child: Theme(
-                              data: ThemeData(
-                                checkboxTheme: const CheckboxThemeData(
-                                  visualDensity: VisualDensity.standard,
-                                  materialTapTargetSize:
-                                      MaterialTapTargetSize.padded,
-                                ),
-                                unselectedWidgetColor:
-                                    FlutterFlowTheme.of(context).alternate,
-                              ),
-                              child: CheckboxListTile(
-                                value: _model.checkboxListTileValue1 ??=
-                                    columnEventdetailsRecord.evento1,
-                                onChanged: (newValue) async {
-                                  safeSetState(() => _model
-                                      .checkboxListTileValue1 = newValue!);
-                                },
-                                title: Text(
-                                  'Evento 1',
-                                  style: FlutterFlowTheme.of(context)
-                                      .titleLarge
-                                      .override(
-                                        fontFamily: 'Inter Tight',
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                                subtitle: Text(
-                                  'Inteligência Artificial e Ética',
-                                  style: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .override(
-                                        fontFamily: 'Inter',
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                                tileColor: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                activeColor:
-                                    FlutterFlowTheme.of(context).primary,
-                                checkColor: FlutterFlowTheme.of(context).info,
-                                dense: false,
-                                controlAffinity:
-                                    ListTileControlAffinity.trailing,
-                                contentPadding: const EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 0.0, 12.0, 0.0),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Expanded(
-                        child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              16.0, 16.0, 16.0, 0.0),
-                          child: Material(
-                            color: Colors.transparent,
-                            child: Theme(
-                              data: ThemeData(
-                                checkboxTheme: const CheckboxThemeData(
-                                  visualDensity: VisualDensity.standard,
-                                  materialTapTargetSize:
-                                      MaterialTapTargetSize.padded,
-                                ),
-                                unselectedWidgetColor:
-                                    FlutterFlowTheme.of(context).alternate,
-                              ),
-                              child: CheckboxListTile(
-                                value: _model.checkboxListTileValue2 ??=
-                                    columnEventdetailsRecord.evento2,
-                                onChanged: (newValue) async {
-                                  safeSetState(() => _model
-                                      .checkboxListTileValue2 = newValue!);
-                                },
-                                title: Text(
-                                  'Evento 2',
-                                  style: FlutterFlowTheme.of(context)
-                                      .titleLarge
-                                      .override(
-                                        fontFamily: 'Inter Tight',
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                                subtitle: Text(
-                                  'Veículos Autônomos e Mobilidade Sustentável',
-                                  style: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .override(
-                                        fontFamily: 'Inter',
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                                tileColor: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                activeColor:
-                                    FlutterFlowTheme.of(context).primary,
-                                checkColor: FlutterFlowTheme.of(context).info,
-                                dense: false,
-                                controlAffinity:
-                                    ListTileControlAffinity.trailing,
-                                contentPadding: const EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 0.0, 12.0, 0.0),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Expanded(
-                        child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              16.0, 16.0, 16.0, 0.0),
-                          child: Material(
-                            color: Colors.transparent,
-                            child: Theme(
-                              data: ThemeData(
-                                checkboxTheme: const CheckboxThemeData(
-                                  visualDensity: VisualDensity.standard,
-                                  materialTapTargetSize:
-                                      MaterialTapTargetSize.padded,
-                                ),
-                                unselectedWidgetColor:
-                                    FlutterFlowTheme.of(context).alternate,
-                              ),
-                              child: CheckboxListTile(
-                                value: _model.checkboxListTileValue3 ??=
-                                    columnEventdetailsRecord.evento3,
-                                onChanged: (newValue) async {
-                                  safeSetState(() => _model
-                                      .checkboxListTileValue3 = newValue!);
-                                },
-                                title: Text(
-                                  'Evento 3',
-                                  style: FlutterFlowTheme.of(context)
-                                      .titleLarge
-                                      .override(
-                                        fontFamily: 'Inter Tight',
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                                subtitle: Text(
-                                  'Segurança Cibernética e Proteção de Dados',
-                                  style: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .override(
-                                        fontFamily: 'Inter',
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                                tileColor: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                activeColor:
-                                    FlutterFlowTheme.of(context).primary,
-                                checkColor: FlutterFlowTheme.of(context).info,
-                                dense: false,
-                                controlAffinity:
-                                    ListTileControlAffinity.trailing,
-                                contentPadding: const EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 0.0, 12.0, 0.0),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Expanded(
-                        child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              16.0, 16.0, 16.0, 0.0),
-                          child: Material(
-                            color: Colors.transparent,
-                            child: Theme(
-                              data: ThemeData(
-                                checkboxTheme: const CheckboxThemeData(
-                                  visualDensity: VisualDensity.standard,
-                                  materialTapTargetSize:
-                                      MaterialTapTargetSize.padded,
-                                ),
-                                unselectedWidgetColor:
-                                    FlutterFlowTheme.of(context).alternate,
-                              ),
-                              child: CheckboxListTile(
-                                value: _model.checkboxListTileValue4 ??=
-                                    columnEventdetailsRecord.evento4,
-                                onChanged: (newValue) async {
-                                  safeSetState(() => _model
-                                      .checkboxListTileValue4 = newValue!);
-                                },
-                                title: Text(
-                                  'Evento 4',
-                                  style: FlutterFlowTheme.of(context)
-                                      .titleLarge
-                                      .override(
-                                        fontFamily: 'Inter Tight',
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                                subtitle: Text(
-                                  'Tecnologia Verde e Sustentabilidade',
-                                  style: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .override(
-                                        fontFamily: 'Inter',
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                                tileColor: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                activeColor:
-                                    FlutterFlowTheme.of(context).primary,
-                                checkColor: FlutterFlowTheme.of(context).info,
-                                dense: false,
-                                controlAffinity:
-                                    ListTileControlAffinity.trailing,
-                                contentPadding: const EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 0.0, 12.0, 0.0),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Expanded(
-                        child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              16.0, 16.0, 16.0, 0.0),
-                          child: Material(
-                            color: Colors.transparent,
-                            child: Theme(
-                              data: ThemeData(
-                                checkboxTheme: const CheckboxThemeData(
-                                  visualDensity: VisualDensity.standard,
-                                  materialTapTargetSize:
-                                      MaterialTapTargetSize.padded,
-                                ),
-                                unselectedWidgetColor:
-                                    FlutterFlowTheme.of(context).alternate,
-                              ),
-                              child: CheckboxListTile(
-                                value: _model.checkboxListTileValue5 ??=
-                                    columnEventdetailsRecord.evento5,
-                                onChanged: (newValue) async {
-                                  safeSetState(() => _model
-                                      .checkboxListTileValue5 = newValue!);
-                                },
-                                title: Text(
-                                  'Evento 5',
-                                  style: FlutterFlowTheme.of(context)
-                                      .titleLarge
-                                      .override(
-                                        fontFamily: 'Inter Tight',
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                                subtitle: Text(
-                                  'Realidade Virtual e Aumentada',
-                                  style: FlutterFlowTheme.of(context)
-                                      .labelMedium
-                                      .override(
-                                        fontFamily: 'Inter',
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                                tileColor: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                activeColor:
-                                    FlutterFlowTheme.of(context).primary,
-                                checkColor: FlutterFlowTheme.of(context).info,
-                                dense: false,
-                                controlAffinity:
-                                    ListTileControlAffinity.trailing,
-                                contentPadding: const EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 0.0, 12.0, 0.0),
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Expanded(
-                        child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              16.0, 16.0, 16.0, 0.0),
                           child: SizedBox(
                             width: 200.0,
                             child: TextFormField(
                               controller: _model.textController2 ??=
                                   TextEditingController(
-                                text:
-                                    columnEventdetailsRecord.numberOfPartipants,
+                                text: columnEventdetailsRecord.descriptionEvent,
                               ),
                               focusNode: _model.textFieldFocusNode2,
                               autofocus: false,
                               obscureText: false,
                               decoration: InputDecoration(
                                 isDense: true,
-                                labelText:
-                                    columnEventdetailsRecord.numberOfPartipants,
+                                labelText: 'Descrição do Evento',
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
@@ -591,6 +269,89 @@ class _UpdateWidgetState extends State<UpdateWidget> {
                       ),
                     ],
                   ),
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              16.0, 16.0, 16.0, 0.0),
+                          child: SizedBox(
+                            width: 200.0,
+                            child: TextFormField(
+                              controller: _model.textController3 ??=
+                                  TextEditingController(
+                                text:
+                                    columnEventdetailsRecord.numberOfPartipants,
+                              ),
+                              focusNode: _model.textFieldFocusNode3,
+                              autofocus: false,
+                              obscureText: false,
+                              decoration: InputDecoration(
+                                isDense: true,
+                                labelText:
+                                    columnEventdetailsRecord.numberOfPartipants,
+                                labelStyle: FlutterFlowTheme.of(context)
+                                    .labelMedium
+                                    .override(
+                                      fontFamily: 'Inter',
+                                      letterSpacing: 0.0,
+                                    ),
+                                hintStyle: FlutterFlowTheme.of(context)
+                                    .labelMedium
+                                    .override(
+                                      fontFamily: 'Inter',
+                                      letterSpacing: 0.0,
+                                    ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    width: 1.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: const BorderSide(
+                                    color: Color(0x00000000),
+                                    width: 1.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                errorBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: FlutterFlowTheme.of(context).error,
+                                    width: 1.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                focusedErrorBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: FlutterFlowTheme.of(context).error,
+                                    width: 1.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                filled: true,
+                                fillColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Inter',
+                                    letterSpacing: 0.0,
+                                  ),
+                              cursorColor:
+                                  FlutterFlowTheme.of(context).primaryText,
+                              validator: _model.textController3Validator
+                                  .asValidator(context),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                   Padding(
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
@@ -598,13 +359,9 @@ class _UpdateWidgetState extends State<UpdateWidget> {
                       onPressed: () async {
                         await widget.eventRef!
                             .update(createEventdetailsRecordData(
-                          nameOfParticipants: _model.textController1.text,
-                          numberOfPartipants: _model.textController2.text,
-                          evento1: _model.checkboxListTileValue1,
-                          evento2: _model.checkboxListTileValue2,
-                          evento3: _model.checkboxListTileValue3,
-                          evento4: _model.checkboxListTileValue4,
-                          evento5: _model.checkboxListTileValue5,
+                          numberOfPartipants: _model.textController3.text,
+                          name: _model.textController1.text,
+                          descriptionEvent: _model.textController2.text,
                         ));
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(

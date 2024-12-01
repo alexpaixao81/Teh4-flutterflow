@@ -50,6 +50,16 @@ class EventdetailsRecord extends FirestoreRecord {
   bool get evento5 => _evento5 ?? false;
   bool hasEvento5() => _evento5 != null;
 
+  // "description_event" field.
+  String? _descriptionEvent;
+  String get descriptionEvent => _descriptionEvent ?? '';
+  bool hasDescriptionEvent() => _descriptionEvent != null;
+
+  // "name" field.
+  String? _name;
+  String get name => _name ?? '';
+  bool hasName() => _name != null;
+
   void _initializeFields() {
     _nameOfParticipants = snapshotData['name_of_participants'] as String?;
     _numberOfPartipants = snapshotData['number_of_partipants'] as String?;
@@ -58,6 +68,8 @@ class EventdetailsRecord extends FirestoreRecord {
     _evento3 = snapshotData['evento3'] as bool?;
     _evento4 = snapshotData['evento4'] as bool?;
     _evento5 = snapshotData['evento5'] as bool?;
+    _descriptionEvent = snapshotData['description_event'] as String?;
+    _name = snapshotData['name'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -102,6 +114,8 @@ Map<String, dynamic> createEventdetailsRecordData({
   bool? evento3,
   bool? evento4,
   bool? evento5,
+  String? descriptionEvent,
+  String? name,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -112,6 +126,8 @@ Map<String, dynamic> createEventdetailsRecordData({
       'evento3': evento3,
       'evento4': evento4,
       'evento5': evento5,
+      'description_event': descriptionEvent,
+      'name': name,
     }.withoutNulls,
   );
 
@@ -130,7 +146,9 @@ class EventdetailsRecordDocumentEquality
         e1?.evento2 == e2?.evento2 &&
         e1?.evento3 == e2?.evento3 &&
         e1?.evento4 == e2?.evento4 &&
-        e1?.evento5 == e2?.evento5;
+        e1?.evento5 == e2?.evento5 &&
+        e1?.descriptionEvent == e2?.descriptionEvent &&
+        e1?.name == e2?.name;
   }
 
   @override
@@ -141,7 +159,9 @@ class EventdetailsRecordDocumentEquality
         e?.evento2,
         e?.evento3,
         e?.evento4,
-        e?.evento5
+        e?.evento5,
+        e?.descriptionEvent,
+        e?.name
       ]);
 
   @override

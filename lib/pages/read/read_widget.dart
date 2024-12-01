@@ -198,8 +198,7 @@ class _ReadWidgetState extends State<ReadWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Text(
-                                      listViewEventdetailsRecord
-                                          .nameOfParticipants,
+                                      listViewEventdetailsRecord.name,
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -218,7 +217,7 @@ class _ReadWidgetState extends State<ReadWidget> {
                                         16.0, 0.0, 16.0, 0.0),
                                     child: Text(
                                       listViewEventdetailsRecord
-                                          .numberOfPartipants,
+                                          .descriptionEvent,
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
