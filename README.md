@@ -1,5 +1,3 @@
-# Tech4-flutterflow
-
 # Eventos App
 
 Este é o repositório do **Eventos App**, uma aplicação desenvolvida utilizando o [FlutterFlow](https://flutterflow.io/). O objetivo da aplicação é gerenciar eventos de forma prática e eficiente.
